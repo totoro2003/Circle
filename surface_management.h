@@ -6,8 +6,9 @@
 
 class surface_management 
 {
-//class exist so that the errors
-//are automatically handled 
+//errors are automatically handled
+//and the destructor takes care of
+//freeing the memory
 private:
     SDL_Surface * surface;
 
@@ -16,6 +17,13 @@ public:
     surface_management( SDL_Surface * window_surface );
     
     surface_management( std::string file_name );
+    
+    //deleted copy constructor and 
+    //assignment operator
+    
+    surface_management( const surface_management& new_class ) = delete;
+    
+    surface_management & operator=( const surface_management& new_class ) = delete;
     
     SDL_Surface * get_surface_instance();
     
