@@ -6,6 +6,8 @@
 
 class window_management
 {
+//automatically handles errors and
+//destroys the window 
 private:
 
     std::string window_title;
