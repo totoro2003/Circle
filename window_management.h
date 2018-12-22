@@ -6,8 +6,9 @@
 
 class window_management
 {
-//automatically handles errors and
-//destroys the window 
+//errors are automatically handled
+//and the destructor takes care of
+//freeing the memory
 private:
 
     std::string window_title;
@@ -25,6 +26,13 @@ private:
 public:
 
     window_management( std::string window_title, int width, int height, int spawn_pos_x, int spawn_pos_y );
+    
+    //deleted copy constructor and 
+    //assignment operator
+    
+    window_management( const window_management& new_class ) = delete;
+    
+    window_management & operator=( const window_management& new_class ) = delete;
     
     ~window_management();
     
